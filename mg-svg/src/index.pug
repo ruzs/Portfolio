@@ -1,0 +1,67 @@
+svg#pic1(viewbox="-50 -50 100 100")
+  line(x1=-20 y1=0 x2=20 y2=0)
+  line(x1=-0 y1=-20 x2=0 y2=20)
+  circle(cx=0 cy=0 r=10)
+    animate(attributeName="r" dur="2s" values="10;20;10" repeatcount="indefinite")
+    //- SVG動畫方式1:對屬性值做動畫
+    //- attributeName="屬性名稱(r)" 
+    //- dur="變化時間(2s)" 
+    //- values="屬性的值(10;20;10)" 
+    //- repeatcount="次數(indefinite)"
+    //- 優:可寫在html,不利用css就可完成
+    //- 缺:可變動性少,ex:速度曲線為線性,看起來較為死板.影格定義較為麻煩
+  
+svg#pic2(viewbox="-50 -50 100 100")
+  circle(cx=0 cy=0 r=10)
+  g
+    line(x1=-20 y1=0 x2=20 y2=0)
+    line(x1=-0 y1=-20 x2=0 y2=20)
+    rect(x=-20 y=-20 width=40 height=40)
+    animateTransform(attributeName="transform" type="rotate" dur="2s" values="0;360" repeatcount="indefinite")
+    //- 動畫方式2:對變形/位移做動畫
+    //- attributeName="transform"
+    //- type="屬性(scale[放大]/rotate[角度])"
+    //- dur="2s"
+    //- values="屬性的值(0;360)" 
+    //- repeatcount="次數(indefinite)"
+  
+svg#pic3(viewbox="0 0 200 200")
+  circle#p1(cx=0 cy=50 r=3)
+    animate(attributeName="cy" dur="2s" values="50;60;50" repeatcount="indefinite")
+  circle#p2(cx=50 cy=80 r=3)
+    animate(attributeName="cy" dur="2s" values="80;40;80" repeatcount="indefinite")
+  circle#p3(cx=100 cy=60 r=3)
+    animate(attributeName="cy" dur="2s" values="60;30;60" repeatcount="indefinite")
+  circle#p4(cx=150 cy=20 r=3)
+    animate(attributeName="cy" dur="2s" values="20;70;20" repeatcount="indefinite")
+  circle#p5(cx=200 cy=40 r=3)
+    animate(attributeName="cy" dur="2s" values="40;60;40" repeatcount="indefinite")
+  polyline(points="0,50 50,80 100,60 150,20 200,40")
+    animate(attributeName="points" dur="2s" values="0,50 50,80 100,60 150,20 200,40;0,60 50,40 100,30 150,70 200,60;0,50 50,80 100,60 150,20 200,40" repeatcount="indefinite")
+  
+svg#pic4(viewbox="0 0 200 200")
+  rect(x=0 y=0 width=20 height=100)
+    animate(attributeName="height" begin="0s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=30 y=0 width=20 height=120)
+    animate(attributeName="height" begin="-0.3s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=60 y=0 width=20 height=140)
+    animate(attributeName="height" begin="-0.6s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=90 y=0 width=20 height=160)
+    animate(attributeName="height" begin="-0.9s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=120 y=0 width=20 height=120)
+    animate(attributeName="height" begin="-1.2s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=150 y=0 width=20 height=80)
+    animate(attributeName="height" begin="-1.5s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  rect(x=180 y=0 width=20 height=60)
+    animate(attributeName="height" begin="-1.8s" dur="2s" values="100;200;100" repeatcount="indefinite")
+  
+svg#pic5(viewbox="-50 -40 100 100" width=240)
+  rect.frame_outer(x=-30 y=-20 width=60 height=40)
+  rect.frame_inner(x=-25 y=-15 width=50 height=30)
+  rect.neck(x=-2 y=20 width=4 height=10)
+  rect.bottom(x=-10 y=30 width=20 height=5)
+  //- g.screen_content
+  line.line(x1=-20 y1=0 x2=-8 y2=0)
+  line.line(x1=-20 y1=5 x2=-5 y2=5)
+  circle.c(cx=10 cy=0 r=7)
+  text.text(x=-27 y=50) My computer

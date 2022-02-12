@@ -1,0 +1,84 @@
+@charset "UTF-8";
+svg {
+  width: 240px;
+  border: solid 2px;
+}
+
+#pic1 {
+  stroke: #000;
+  stroke-width: 3px;
+}
+#pic1 circle {
+  fill: white;
+}
+
+#pic2 {
+  stroke: #000;
+  stroke-width: 3px;
+}
+#pic2 circle {
+  fill: white;
+}
+#pic2 rect {
+  fill: none;
+}
+
+#pic3 {
+  stroke: #000;
+  stroke-width: 2px;
+}
+#pic3 polyline {
+  fill: none;
+}
+
+#pic5 {
+  stroke: #000;
+  stroke-width: 2px;
+  fill: none;
+}
+#pic5 * {
+  transform-box: fill-box;
+}
+#pic5 rect {
+  fill: none;
+}
+#pic5 circle {
+  stroke: none;
+  fill: red;
+}
+#pic5 text {
+  stroke: none;
+  fill: #000;
+  font-family: 圓體-繁;
+  font-size: 10px;
+  transition-duration: 0.5s;
+}
+#pic5 .frame_outer, #pic5 .frame_inner, #pic5 .neck, #pic5 .bottom {
+  transform: scale(0);
+  transform-origin: center bottom;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+}
+#pic5 .line, #pic5 .c {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+#pic5:hover .frame_outer, #pic5:hover .frame_inner, #pic5:hover .neck, #pic5:hover .bottom {
+  transform: scale(1);
+  transition-delay: 0.5s;
+}
+#pic5:hover .neck, #pic5:hover .bottom {
+  transition-delay: 0s;
+}
+#pic5:hover .line {
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+#pic5:hover .c {
+  opacity: 1;
+  transition-delay: 1s;
+}
+#pic5:hover text {
+  fill: red;
+}
